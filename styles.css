@@ -1,0 +1,29 @@
+h1
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 30px;
+    font-size: 80px;
+    font-family: Arial;
+    background-color: black;
+    color: white;
+    position: center;
+}
+
+p 
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15%;
+    font-size: 50px;
+    background-color: black;
+    padding: 30px;
+    color: white;
+}
+
+body
+{
+    background-image: url("Marc-Marquez-leads-the-MotoGP-grid.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
