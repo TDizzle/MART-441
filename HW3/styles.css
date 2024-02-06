@@ -1,0 +1,29 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #a0a0a0;
+    color: #1a1a1a;
+  }
+  
+  #story-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  button {
+    background-color: #5c5c5c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: crosshair;
+    margin: auto;
+  }
+  
+  button:hover {
+    background-color: #000000;
+  }
+  
