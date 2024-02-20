@@ -1,3 +1,11 @@
+function greetCreator(name) {
+  if (name === "Tristan Lilly") {
+    return "Hello, creator!";
+  } else {
+    return "Hello, " + name + "!";
+  }
+}
+
 let mainStory = 1;
 
 function makeChoice(choice) {
@@ -53,6 +61,39 @@ function makeChoice(choice) {
       storyElement.innerText = "You rappel down the cliff. You encounter a mysterious creature. What will you do?";
       mainStory = 5;
     }
+  } 
+  
+  else if (mainStory === 5 ) {
+    // Handle choices for the mysterious creature scenario
+    // ...
+
+    // After handling the scenario, you can give the option to restart
+    const restart = confirm("Do you want to restart the story?");
+    if (restart) {
+      mainStory = 0; // Reset the story to the beginning
+      storyElement.innerText = "You wakeup ontop of a mountain... What do you do?";
+      changeBackgroundImage(); // Update the background image
+    } else {
+      // Handle what to do if the user doesn't want to restart
+      storyElement.innerText = "Thanks for playing!";
+    }
+  }
+
+  else if (mainStory === 6 ) {
+    
+    const restart = confirm("Do you want to restart the story?");
+
+    if (restart) {
+
+      mainStory = 0; 
+
+      storyElement.innerText = "You wakeup ontop of a mountain... What do you do?";
+      changeBackgroundImage(); 
+
+    } else {
+      
+      storyElement.innerText = "Thanks for playing!";
+    }
   }
 
   changeBackgroundImage();
@@ -88,4 +129,11 @@ function changeBackgroundImage() {
     default:
       bodyElement.style.backgroundImage = "url('mountaintop.jpeg')"; 
   }
+}
+
+
+function getUserInput() {
+  const userName = document.getElementById('userName').value;
+
+  alert('Sup, ' + userName + '!');
 }

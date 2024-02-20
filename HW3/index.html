@@ -9,13 +9,20 @@
 
 
 <body>
+  
+  <label for="userName">What's your Username?:</label>
+  <input type="text" id="userName" />
+
+  <button onclick="getUserInput()">Submit</button>
+  
   <div id="story-container">
     <h1>The Spooky Mountain</h1>
     <p id="story">You wakeup ontop of a mountain... What do you do?</p>
-    <button id="choice1" onclick="makeChoice(1)">Go left</button>
+    <button id="choice1" onclick="makeChoice(1).addEventlistener">Go left</button>
     <button id="choice2" onclick="makeChoice(2)">Go right</button>
     <button id="choice3" onclick="makeChoice(3)">Wait</button>
   </div>
   <script src="script.js"></script>
+
 </body>
 </html>
