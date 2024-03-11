@@ -25,27 +25,9 @@ class ViewFinder
 
 function initializeArray()
 {
-    var myViewFinder = new ViewFinder(" An American tank, called the Abrams.");
-
-    var myViewFinder1 = new ViewFinder('images/Abrams.jpeg');
-
-    var myViewFinder2 = new ViewFinder(" Abrams tanks were born in the 1970s. Today, our army still uses the same chassis, but with updated eletronics and weapon systems.");
-
-    var myViewFinder3 = new ViewFinder(" By me :D");
-
-    var myViewFinder4 = new ViewFinder(" The image was captured in 2018");
+    var myViewFinder = new ViewFinder(" An American tank, called the Abrams.", 'images/Abrams.jpeg', " Abrams tanks were born in the 1970s. Today, our army still uses the same chassis, but with updated eletronics and weapon systems."," The image was captured in 2018" );
 
     myViewFinderArray.push(myViewFinder);
-
-    myViewFinderArray.push(myViewFinder1);
-
-    myViewFinderArray.push(myViewFinder2);
-
-    myViewFinderArray.push(myViewFinder3);
-
-    myViewFinderArray.push(myViewFinder4);
-
-    myViewFinderArray.push(myImage.src = images/Abrams.jpeg)
 
 }
 
