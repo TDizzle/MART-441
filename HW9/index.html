@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 function displayISSData(data) {
     var $container = $('#iss-data');
-    $container.html('<p><strong>Latitude:</strong> ' + data.iss_position.latitude + '</p><p><strong>Longitude:</strong> ' + data.iss_position.longitude + '</p><p><strong>Timestamp:</strong> ' + new Date(data.timestamp * 1000) + '</p><p><strong>Message:</strong> ' + data.message + '</p>');
+    $container.html('<p><strong>Latitude:</strong> ' + data.iss_position.latitude + '</p><p><strong>Longitude:</strong> ' + data.iss_position.longitude + '</p><p><strong>Timestamp:</strong> ' + data.timestamp + '</p><p><strong>Message:</strong> ' + data.message + '</p>');
     
     $container.issDataDisplay();
 }
