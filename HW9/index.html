@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISS Position Data</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="issPlugin.js"></script> <!-- Load jQuery plugin script -->
-<link rel="stylesheet" type="text/css" href="styles.css"> <!-- Load CSS for styling -->
+<script src="issPlugin.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -30,7 +30,6 @@ function displayISSData(data) {
     var $container = $('#iss-data');
     $container.html('<p><strong>Latitude:</strong> ' + data.iss_position.latitude + '</p><p><strong>Longitude:</strong> ' + data.iss_position.longitude + '</p><p><strong>Timestamp:</strong> ' + new Date(data.timestamp * 1000) + '</p><p><strong>Message:</strong> ' + data.message + '</p>');
     
-    // Apply jQuery plugin
     $container.issDataDisplay();
 }
 </script>
