@@ -1,0 +1,23 @@
+   #circle {
+      width: 100px;
+      height: 100px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 400;
+    }
+
+    .stuff{
+      background: blue;
+      color:white;
+    }
+
+    #third{
+      background: darkolivegreen;
+      color:white;
+    }
+
+    body{
+        background-color: tan;
+    }
