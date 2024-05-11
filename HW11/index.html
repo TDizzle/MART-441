@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Objects</title>
+<style>
+    canvas {
+        border: 2px solid black; /* Nice border around the canvas */
+    }
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="400"></canvas>
+<audio id="backgroundMusic" autoplay loop>
+    <source src="background_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    
+    // Class for the objects
+    class GameObject {
+        constructor(x, y, radius, color, dx, dy) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.dx = dx;
+            this.dy = dy;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        update() {
+            this.x += this.dx;
+            this.y += this.dy;
+            this.checkCollision();
+            this.draw();
+        }
+
+        checkCollision() {
+            if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+                this.dx = -this.dx;
+            }
+            if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+                this.dy = -this.dy;
+            }
+        }
+    }
+
+    // User-controlled object
+    let userObject = new GameObject(50, 50, 20, 'blue', 0, 0);
+
+    // Autonomous object
+    let autonomousObject = new GameObject(200, 200, 30, 'red', 2, 2);
+
+    function drawBackground() {
+        ctx.fillStyle = '#f0f0f0'; // Change background color
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function checkCollision() {
+        let dx = userObject.x - autonomousObject.x;
+        let dy = userObject.y - autonomousObject.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < userObject.radius + autonomousObject.radius) {
+            canvas.style.border = '5px solid yellow'; // Change canvas border color
+            userObject.radius += 2; // Increase user object size
+            autonomousObject.radius += 2; // Increase autonomous object size
+            backgroundMusic.pause(); // Pause background music
+            setTimeout(() => {
+                canvas.style.border = '2px solid black'; // Reset canvas border color after collision
+                backgroundMusic.play(); // Resume background music after a delay
+            }, 2000);
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBackground();
+        userObject.update();
+        autonomousObject.update();
+        checkCollision();
+    }
+
+    animate();
+</script>
+</body>
+</html>
